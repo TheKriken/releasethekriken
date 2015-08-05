@@ -8,7 +8,8 @@ var bodyParser = require('body-parser');
 var routes = require('./sauce/routes/index');
 var users = require('./sauce/routes/users');
 
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
 var app = express();
 
@@ -59,7 +60,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.listen(port);
+app.listen(port, ipaddress);
 
 console.log("Magic happens at port: " + port);
 
