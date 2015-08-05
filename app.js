@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./sauce/routes/index');
 var users = require('./sauce/routes/users');
 
-var port = process.env.PORT || 8080;
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
 var app = express();
 
